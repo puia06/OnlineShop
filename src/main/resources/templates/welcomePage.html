@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Puia Calin">
+    <title>OnlineShop</title>
+</head>
+<body>
+<h1 th:text="#{welcome}">Welcome</h1><br/><br/>
+<a href="/products">See Products</a><br/><br/>
+
+
+
+<div class="row">
+    <div class="col-md-12">
+        <img class="img-responsive" src="../static/resources/images/onlineShop.png" th:src="@{/resources/images/onlineShop.png}"/>
+    </div>
+</div>
+
+</body>
+</html>

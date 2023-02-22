@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<head>
+  <meta charset="UTF-8"/>
+  <title>List of Products</title>
+</head>
+<body>
+
+<!--/*@thymesVar id="product" type="com.online.shop.online_shop.model.Product"*/-->
+<h2>Products</h2>
+
+<table id="products" class="table table-striped">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Price</th>
+    <th>Availability</th>
+    <th>Description</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="product:${products}">
+    <td th:text="${product.name}"></td>
+    <td th:text="${product.price}"></td>
+    <td th:text="${product.availability}"></td>
+    <td th:text="${product.description}"></td>
+  </tr>
+  </tbody>
+</table>
+</body>
+</html>
+
