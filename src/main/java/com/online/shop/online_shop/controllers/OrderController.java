@@ -1,8 +1,7 @@
 package com.online.shop.online_shop.controllers;
 
-import com.online.shop.online_shop.model.Order;
+
 import com.online.shop.online_shop.services.OrderService;
-import com.online.shop.online_shop.services.ProductService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,24 +12,22 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class OrderController {
     private final OrderService orderService;
-    private final ProductService productService;
 
-    public OrderController(OrderService orderService, ProductService productService) {
+
+    public OrderController(OrderService orderService) {
         this.orderService = orderService;
-        this.productService = productService;
     }
 
     @GetMapping ("product/{name}")
     public String saveOrder(@PathVariable String name){
-        Order order=new Order();
-        order.setProductName(name);
-        orderService.save(order);
+        orderService.save(name);
 
         System.out.println("Name value " + name);
         return "orders/index";
     }
 
-    @RequestMapping({"/orders","/orders/list"})
+
+    @RequestMapping({"/orders","orders","orders/list","/orderList"})
     public String listOrders(Model model){
 
         model.addAttribute("orders",orderService.findAll());

@@ -6,7 +6,7 @@ import java.util.Set;
 
 
 public interface OrderService {
-    Order save(Order object);
+    Order save(String productName);
     Set<Order> findAll();
 
     Order findById(Long id);

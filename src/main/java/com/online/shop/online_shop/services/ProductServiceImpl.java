@@ -7,11 +7,11 @@ import org.springframework.stereotype.Service;
 import java.util.HashSet;
 import java.util.Set;
 @Service
-public class ProductImpl implements ProductService {
+public class ProductServiceImpl implements ProductService {
     private final ProductRepository productRepository;
 
 
-    public ProductImpl(ProductRepository productRepository) {
+    public ProductServiceImpl(ProductRepository productRepository) {
         this.productRepository = productRepository;
     }
 

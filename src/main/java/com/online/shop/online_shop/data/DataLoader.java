@@ -1,9 +1,7 @@
 package com.online.shop.online_shop.data;
 
 import com.online.shop.online_shop.model.AvailabilityType;
-import com.online.shop.online_shop.model.Order;
 import com.online.shop.online_shop.model.Product;
-import com.online.shop.online_shop.services.OrderService;
 import com.online.shop.online_shop.services.ProductService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -11,11 +9,10 @@ import org.springframework.stereotype.Component;
 @Component
 public class DataLoader implements CommandLineRunner {
     private final ProductService productService;
-    private final OrderService orderService;
 
-    public DataLoader(ProductService productService, OrderService orderService) {
+
+    public DataLoader(ProductService productService) {
         this.productService = productService;
-        this.orderService = orderService;
     }
 
     @Override
@@ -75,9 +72,6 @@ public class DataLoader implements CommandLineRunner {
         productService.save(product6);
 
 
-        Order order=new Order();
-        order.setProductName("Control");
-        orderService.save(order);
 
 
 
