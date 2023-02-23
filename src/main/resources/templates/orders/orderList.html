@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8"/>
+    <title>Order List</title>
+</head>
+<body>
+
+<!--/*@thymesVar id="order" type="com.online.shop.online_shop.model.Order"*/-->
+<h2>Orders</h2>
+
+<table id="orders" class="table table-striped">
+    <thead>
+    <tr>
+        <th>Name of Products</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="order:${orders}">
+        <td th:text="${order.productName}"></td>
+
+    </tr>
+    </tbody>
+</table>
+<br/><br/>
+
+<div class="homeButt">
+    <a th:href="@{'/welcomePage'}"><button>Home</button></a><br/><br/>
+</div>
+</body>
+</html>

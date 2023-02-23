@@ -22,4 +22,5 @@ public class Product extends BaseEntity{
     @Column(name = "availability")
     private AvailabilityType availability;
 
+
 }

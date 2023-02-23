@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Order Successfully</title>
+</head>
+<body>
+<h1 th:text="'Order Successfully!'"></h1><br/><br/>
+<div class="prodBut">
+    <a th:href="@{'/products'}"><button>Go Back To Products</button></a><br/><br/>
+</div>
+
+<div class="orderBut">
+    <a th:href="@{'/orders/orderList'}"><button>Show Orders</button></a>
+</div>
+
+</body>
+</html>

@@ -24,9 +24,17 @@
     <td th:text="${product.price}"></td>
     <td th:text="${product.availability}"></td>
     <td th:text="${product.description}"></td>
+    <td th:switch="${product.availability.name()}">
+      <a th:case="'AVAILABLE'" th:href="@{'/order/product/{name}'(name=${product.name})}"><button>Order product</button></a>
+      <span th:case="*">Not allowed</span>
+    </td>
   </tr>
   </tbody>
 </table>
+<br/><br/>
+<div class="homeBut">
+<a th:href="@{'/welcomePage'}"><button>Home</button></a><br/><br/>
+</div>
 </body>
 </html>
 
